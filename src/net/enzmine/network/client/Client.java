@@ -1,4 +1,4 @@
-package net.enzmine;
+package net.enzmine.network.client;
 
 /*
  * This file is part of Enzmine.
@@ -18,15 +18,8 @@ package net.enzmine;
  */
 
 import lombok.Getter;
-import net.enzmine.heart.Heart;
-import net.enzmine.network.NetworkManager;
+import net.enzmine.network.protocol.Protocol;
 
-public final class Server{
-	@Getter private final Heart heart;
-	@Getter private final NetworkManager networkManager;
-
-	public Server(){
-		heart = new Heart(this);
-		networkManager = new NetworkManager(this);
-	}
+public class Client{
+	@Getter private Protocol protocol;
 }

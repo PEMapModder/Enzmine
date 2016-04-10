@@ -1,4 +1,4 @@
-package net.enzmine;
+package net.enzmine.network.socket;
 
 /*
  * This file is part of Enzmine.
@@ -18,15 +18,13 @@ package net.enzmine;
  */
 
 import lombok.Getter;
-import net.enzmine.heart.Heart;
-import net.enzmine.network.NetworkManager;
+import lombok.RequiredArgsConstructor;
 
-public final class Server{
-	@Getter private final Heart heart;
-	@Getter private final NetworkManager networkManager;
+import java.net.SocketAddress;
+import java.nio.ByteBuffer;
 
-	public Server(){
-		heart = new Heart(this);
-		networkManager = new NetworkManager(this);
-	}
+@RequiredArgsConstructor
+public class WrappedPacket{
+	@Getter private final ByteBuffer data;
+	@Getter private final SocketAddress source;
 }

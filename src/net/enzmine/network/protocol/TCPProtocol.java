@@ -1,4 +1,4 @@
-package net.enzmine;
+package net.enzmine.network.protocol;
 
 /*
  * This file is part of Enzmine.
@@ -17,16 +17,6 @@ package net.enzmine;
  * along with Enzmine.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import lombok.Getter;
-import net.enzmine.heart.Heart;
-import net.enzmine.network.NetworkManager;
+public interface TCPProtocol extends Protocol{
 
-public final class Server{
-	@Getter private final Heart heart;
-	@Getter private final NetworkManager networkManager;
-
-	public Server(){
-		heart = new Heart(this);
-		networkManager = new NetworkManager(this);
-	}
 }
